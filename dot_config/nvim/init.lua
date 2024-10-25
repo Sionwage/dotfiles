@@ -47,8 +47,23 @@ lazy.path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 lazy.opts = {}
 
 lazy.setup({
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {"williamboman/mason.nvim"},
+  {"williamboman/mason-lspconfig.nvim"},
+  {"neovim/nvim-lspconfig"},
 })
+
+-- Initialize the Mason Plugins
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+require("mason-lspconfig").setup()
 
 vim.opt.termguicolors = true
 vim.cmd.colorscheme('catppuccin-mocha')
