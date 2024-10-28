@@ -38,5 +38,8 @@ config.launch_menu = {
   },
 }
 
+-- start Powershell instead of Windows Command Prompt on new Wezterm instance
+config.default_prog = { 'pwsh.exe', '-NoLogo' }
+
 -- and finally, return the configuration to wezterm
 return config
