@@ -1,7 +1,7 @@
 -- Neovim Config
 --
 
-print("Sourcing init.lua")
+-- print("Sourcing init.lua")
 
 -- set the leader key before plugins to prevent the wrong key getting mapped
 vim.g.mapleader = ' '
@@ -21,3 +21,4 @@ require 'lazy-bootstrap'
 
 -- [[Configure and install plugins ]]
 require 'lazy-plugins'
+
