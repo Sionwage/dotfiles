@@ -9,7 +9,28 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 config.color_scheme = 'Catppuccin Mocha'
 -- Change default font
-config.font = wezterm.font('EnvyCodeR Nerd Font Mono', {weight='Bold', stretch='Normal', style='Normal'})
+-- config.font = wezterm.font('EnvyCodeR Nerd Font Mono', {weight='Bold', stretch='Normal', style='Normal'})
+
+-- Remove the title bar from Wezterm
+config.window_decorations = "RESIZE"
+
+-- brighten ansi colors when bold
+config.bold_brightens_ansi_colors = true
+
+
+-- disable animation
+config.default_cursor_style = "BlinkingBar"
+config.animation_fps = 30
+-- config.cursor_blink_ease_in = 'Ease'
+-- config.cursor_blink_ease_out = 'Ease'
+-- config.cursor_blink_rate = 100
+
+config.window_background_opacity = 0.95
+
+-- config.front_end = "Software"
+config.webgpu_power_preference = "HighPerformance"
+config.front_end = "WebGpu"
+-- config.prefer_egl = false
 
 -- WSL Domains
 config.wsl_domains = {
