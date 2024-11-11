@@ -2,7 +2,7 @@ return {
   "hkupty/iron.nvim",
   config = function(plugins, opts)
     local iron = require("iron.core")
-
+    local python_format = require("iron.fts.common").bracketed_paste_python
     iron.setup({
       config = {
         -- Whether a repl should be discarded or not
@@ -10,9 +10,8 @@ return {
         -- Your repl definitions come here
         repl_definition = {
           python = {
-            -- Can be a table or a function that
-            -- returns a table (see below)
-            command = { "python" },
+            command = { "ipython", "--no-autoindent" },
+            format = python_format,
           },
         },
         -- How the repl window will be displayed
