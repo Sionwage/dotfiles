@@ -8,3 +8,12 @@ vim.g.python3_host_prog = "C:/Users/dziliak/Python Venv/neovim_venv/.venv/Script
 -- disable perl and ruby providers
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
+
+--To make powershell work with neovim.
+vim.cmd([[
+let &shell = has('win32') ? 'powershell' : 'pwsh'
+let &shellcmdflag = '-NoLogo -File "C:\Users\dziliak\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+set shellquote= shellxquote=
+]])
