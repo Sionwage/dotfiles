@@ -8,11 +8,12 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 config.colors = require("cyberdream")
--- config.window_background_opacity = 0.3
--- config.text_background_opacity = 0.3
 
 -- Change default font
 -- config.font = wezterm.font('EnvyCodeR Nerd Font Mono', {weight='Bold', stretch='Normal', style='Normal'})
+
+-- Disable audible bell
+config.audible_bell = "Disabled"
 
 -- Remove the title bar from Wezterm
 config.window_decorations = "RESIZE"
@@ -22,31 +23,39 @@ config.bold_brightens_ansi_colors = true
 
 -- disable animation
 config.default_cursor_style = "BlinkingBar"
-config.animation_fps = 30
+config.animation_fps = 60
 -- config.cursor_blink_ease_in = 'Ease'
 -- config.cursor_blink_ease_out = 'Ease'
 -- config.cursor_blink_rate = 100
 
 config.window_background_opacity = 0.85
-config.text_background_opacity = 0.25
+config.text_background_opacity = 0.85
 
 -- config.front_end = "Software"
+-- for _, gpu in ipairs(wezterm.gui.enumerate_gpus()) do
+-- 	if gpu.backend == "Vulkan" and gpu.device_type == "IntegratedGpu" then
+-- 		config.webgpu_preferred_adapter = gpu
+-- 		config.front_end = "WebGpu"
+-- 		break
+-- 	end
+-- end
 config.webgpu_power_preference = "HighPerformance"
-config.front_end = "WebGpu"
-config.prefer_egl = false
+-- config.front_end = "WebGpu"
+-- config.prefer_egl = false
 -- config.win32_system_backdrop = "Acrylic"
 
 -- WSL Domains
 config.wsl_domains = {
+
 	{
 		-- The name of this specific domain.  Must be unique amonst all types
 		-- of domain in the configuration file.
-		name = "WSL:Ubuntu-24.04",
+		name = "WSL:Ubuntu-24.04-neovim",
 
 		-- The name of the distribution.  This identifies the WSL distribution.
 		-- It must match a valid distribution from your `wsl -l -v` output in
 		-- order for the domain to be useful.
-		distribution = "Ubuntu-24.04",
+		distribution = "Ubuntu-24.04-neovim",
 	},
 }
 

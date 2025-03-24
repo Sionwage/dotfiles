@@ -3,6 +3,18 @@
   "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
+  "manage_rules": [
+    {
+      "kind": "Title",
+      "id": "Ubuntu-24.04-neovim",
+      "matching_strategy": "Contains"
+    },
+    {
+      "kind": "Title",
+      "id": "sub-surface",
+      "matching_strategy": "DoesNotContain"
+    },
+  ]
   "display_index_preferences": {
     "0": "HPN372C-4&2c5635c7&0&UID20548",
     "1": "HPN36FA-4&2c5635c7&0&UID24900",
