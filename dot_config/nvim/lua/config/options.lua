@@ -2,4 +2,5 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.g.python3_host_prog = vim.fn.expand("~/Documents/Python Venv/neovim_venv/.venv/bin/python3")
+vim.g.python3_host_prog = vim.fn.expand("~/python_venv/neovim_venv/.venv/bin/python3")
+vim.g.loaded_perl_provider = 0

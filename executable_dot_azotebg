@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+pkill swaybg
+swaybg -i /home/dziliak/Pictures/Wallpapers/24-0129-05.hr.jpg -m center &
