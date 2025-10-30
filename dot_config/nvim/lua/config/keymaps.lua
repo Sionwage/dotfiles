@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>oo", ":Obsidian<CR>", opts)
 vim.keymap.set("n", "<leader>os", ":Obsidian search<CR>", opts)
 vim.keymap.set("n", "<leader>ot", ":Obsidian tomorrow<CR>", opts)
 vim.keymap.set("n", "<leader>oq", ":Obsidian quick_switch<CR>", opts)
+vim.keymap.set("v", "<leader>ox", ":ObsidianExtractNote", opts)
 vim.keymap.set("n", "<leader>oy", ":Obsidian yesterday<CR>", opts)
 
 vim.keymap.set("n", "-", ":Oil<CR>", opts)

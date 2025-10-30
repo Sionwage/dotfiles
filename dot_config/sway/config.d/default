@@ -67,6 +67,10 @@ bindsym {
 
     # Reload the configuration file
     $mod+Shift+c reload
+
+    # Lock screen
+    $mod+Alt+w exec ~/.scripts/restart-waybar.sh
+
 }
 
 #
@@ -258,3 +262,22 @@ bindswitch --reload --locked lid:off exec ~/.config/sway/scripts/clamshell.sh
 exec_always ~/.config/sway/scripts/clamshell.sh
 
 exec_always /usr/bin/udiskie -t
+
+# Assign workspaces 1–5 to HDMI-A-1
+workspace 1 output DP-5
+workspace 2 output DP-5
+workspace 3 output DP-5
+workspace 4 output DP-5
+workspace 5 output DP-5
+
+# Assign workspaces 6–10 to DP-1
+workspace 6 output DP-9
+workspace 7 output DP-9
+workspace 8 output DP-9
+workspace 9 output DP-9
+workspace 10 output DP-9
+
+exec swaymsg workspace 1
+exec swaymsg workspace 6
+
+exec ~/.scripts/restart-waybar.sh

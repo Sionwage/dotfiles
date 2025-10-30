@@ -24,6 +24,7 @@ return {
     },
     ui = {
       enable = false,
+      checkboxes = nil,
     },
     completion = {
       nvim_cmp = false,
@@ -48,7 +49,11 @@ return {
         insert_tag = "<C-l>",
       },
     },
-
+    checkbox = {
+      enable = false,
+      create_new = false,
+      order = {},
+    },
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
       folder = "Dailies",
