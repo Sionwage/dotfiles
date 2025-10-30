@@ -1,0 +1,62 @@
+#| --------------------------------------------------------------------------
+
+                         KMonad: US ansi 100% template
+
+  This file contains the `defsrc` configuration for a standard US-ansi 100%
+  keyboard. Modelled on a standard DAS-keyboard 100%. Copy out the 'defsrc'
+  layer to start your own keyboard configuration. Copy out the `deflayer`
+  template to easily start a new layer with matching `transparent` buttons.
+
+(deflayer name
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _                          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _                    _          _    _    _    _
+  _    _    _              _              _    _    _    _               _    _    _     _    _   
+)
+
+  -------------------------------------------------------------------------- |#
+
+;; todo
+;; QMK Hack is “Space FN” (tapping = space, holding fn layer) with hjkl arrow keys on the fn layer
+;; 
+;; the key to the left of the ‘A’ key is always a combination: if I tap it, I get Esc, but if I hold it, it becomes Ctrl (well, technically, LCtrl).
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup  nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn  kp7  kp8  kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret                        kp4  kp5  kp6
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                 up         kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc            ralt rmet cmp  rctl            left down rght  kp0  kp.
+)
+
+(deflayer default_layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+  @cap _    _    _    _    _    _    _    _    _    @sym _    _                          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _                    _          _    _    _    _
+  _    _    _              _              _    _    _    _               _    _    _     _    _   
+)
+
+(deflayer symbols
+  _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+  _    _    _    _    _    =    _    _    up   _    _    _    _    _     _    _    _     _    _    _    _
+  _    _    _    _    _    _    _    left down rght _    _    _                          _    _    _
+  _    _    _    _    _    _    @prt _    _    _    _    _                    _          _    _    _    _
+  _    _    _              _              _    _    _    _               _    _    _     _    _   
+)
+
+(defalias
+  ;; tap for caps, hold for lctl
+  cap (tap-hold 200 200 esc lctl)
+  sym (tap-hold 200 200 ; (layer-while-held symbols))
+  prt C-S-prnt
+)
+
+(defcfg
+  log-layer-changes no
+)
