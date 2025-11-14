@@ -40,6 +40,7 @@ $screenshot_copy_area)
 $screenshot_copy_area_ocr)
   # grim -g "$(slurp)" - | tesseract - - | wl-copy
   grim -g "$(slurp)" - | convert -colorspace gray -fill white -resize 480% -sharpen 0x1 - - | tesseract - - | wl-copy
+  notify-send -u normal -t 2500 "OCR Ready"
   ;;
 $screenshot_area_to_file)
   grim -g "$(slurp)"
